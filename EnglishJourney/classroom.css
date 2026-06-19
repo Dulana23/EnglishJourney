@@ -1,0 +1,166 @@
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4ff, #e6ecff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(Img/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* ===== Header Section ===== */
+.head {
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+   background: rgb(10, 220, 220,0.25);
+    color: #341468;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.head h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.head h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* ===== Question Content ===== */
+.con {
+    max-width: 700px;
+    margin: 30px 20px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-content: center;
+}
+
+.con p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #374151;
+}
+
+/* ===== Section Title ===== */
+.con2 {
+    max-width: 700px;
+    margin: 10px 20px 25px;
+    text-align: center;
+}
+
+.con2 h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+/* ===== Button Area ===== */
+.btn {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 0 20px 40px;
+    width: 100%;
+}
+
+/* ===== Buttons ===== */
+.btn button {
+    padding: 14px 10px;
+    border: none;
+    border-radius: 10px;
+    background: #4f6ef7;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(79, 110, 247, 0.35);
+    align-items: center;
+    
+}
+
+.btn button:hover {
+    background: #3b5bfd;
+    transform: translateY(-3px);
+    background-color: #04538f;
+    box-shadow: 0 8px 18px rgba(59, 91, 253, 0.4);
+}
+
+.btn button:active {
+    transform: scale(0.97);
+}
+
+.con3 h3{
+    margin-left: 35%;
+    font-size: 25px;
+    color:#081766;
+
+}
+
+.con3 .hed2{
+    width:500px;
+    margin-left: 10%;
+    font-weight: 600;
+
+}
+
+
+.ins{
+    max-width: 700px;
+    margin: 30px 20px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.sen1,.sen2,.sen3,.sen4,.sen5,.sen6,.sen7,.sen8,.sen9,.sen10{
+   
+    width: 700px;
+    align-items: center;
+    margin: 30px 20px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+
+}
+
+.sen1:hover,.sen2:hover,.sen3:hover,.sen4:hover,.sen5:hover,.sen6:hover,.sen7:hover,.sen8:hover,.sen9:hover,.sen10:hover{
+    background-color: #1e40af;
+    color:white;
+    
+}
+/* ===== Responsive Improvements ===== */
+@media (max-width: 480px) {
+    .head h2 {
+        font-size: 1.8rem;
+    }
+
+    .con p {
+        font-size: 1rem;
+    }
+
+    .btn button {
+        font-size: 0.95rem;
+    }
+}

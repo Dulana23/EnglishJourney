@@ -1,0 +1,158 @@
+
+
+
+.logo{
+    width: 120px;
+    height: 120px;
+    
+    padding: 20px;
+    
+    
+    
+    
+}
+
+.div1{
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364, #4facfe, #00f2fe);
+
+    display: flex;
+    align-items: center;
+   
+
+}
+
+.title{
+    color: aliceblue;
+    
+}
+.title1{
+    color: aliceblue;
+    padding: 0%;
+    font-size: 10px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#header{
+    animation: slideDown 2s ease;
+   
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px);
+           opacity: 0; }
+
+    to   { transform: translateY(0); 
+           opacity: 1; }
+}
+
+@keyframes slideright {
+    
+        from { transform: translateX(100%);
+            opacity: 0; }
+    
+     to   { transform: translateX(0); 
+            opacity: 1; }
+}
+
+#title{
+    animation: slideright 2s ease-out;
+
+}
+
+.navbar-nav{
+   text-align: center;
+   font-weight: bold;
+  
+    
+}
+
+.bodyH{
+     background-image: url(Img/background1.jpg);
+     background-repeat: repeat-y;
+     background-size: contain;
+     min-height: 100vh;
+    
+}
+
+
+
+.carousel{
+    margin-top: 50px;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.cardlist {
+    width: 80%; 
+    margin: 0 auto;
+    overflow: hidden; 
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364, #4facfe, #00f2fe);
+}
+
+.innerCards {
+    display: flex;
+    width: max-content; /* Container doesn't wrap cards */
+    animation: scroll 15s linear infinite;
+}
+
+.card {
+   
+    flex: 0 0 calc(300px - 20px); 
+    height: 200px;
+    margin: 10px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 5px;
+    position: absolute;
+
+   
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+
+
+
+.cardlist:hover .inner-cards {
+    animation-play-state: paused;
+    
+}
+
+
+
+
+.profile{
+    background-color: rgb(21, 132, 160);
+    width: 100%;
+    align-items: center;
+    height: inherit;
+    margin-top: 40px;
+    color: azure;
+
+}
+.form{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+
+a:hover{
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+

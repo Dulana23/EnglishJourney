@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(Img/background1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.loginbox .formlogin{
+    /*display:none;*/
+}
+.loginbox{
+    position: relative;
+    width: 400px;
+    height:440px;
+    background: transparent;
+    border:5px solid rgba(14, 18, 22, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+.loginbox .formlogin{
+    width:100%;
+    padding:40px;
+    transition: transform .4s ease;
+}
+
+.formlogin h2{
+    font-size:2em;
+    color:black;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.input-box{
+    position:relative;
+    width:100%;
+    height:45px;
+    border-bottom:2px solid black;
+    margin: 20px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top:50%;
+    left:5px;
+    transform:translateY(-50%);
+    font-size: 1em;
+    color:black;
+    transition: .3s;
+    font-weight: 400;
+    padding:0 20px 0 5px;
+    pointer-events: none;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border:none;
+    outline:none;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right:10px;
+}
+
+.remember{
+    font-weight: 400;
+    margin: -15px 0 15px;
+    margin: 5px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.remember label input{
+    accent-color: aqua;
+}
+
+.remember a{
+    color:rgb(57, 20, 201);
+    text-decoration: none;
+}
+
+.remember a:hover{
+    text-decoration:underline;
+}
+
+.lgbtn{
+    width:100%;
+    height:40px;
+    background:blue;
+    border:none;
+    border-radius:9px;
+    cursor: pointer;
+    margin-top: 3px;
+    color:white;
+}
+
+.loginreg{
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.reglink{
+    color:blue;
+    text-decoration: none;
+}
+
+.reglink:hover{
+    text-decoration: underline;
+}
+
+.loginbox .closebtn{
+    position: absolute;
+    top:0;
+    right: 0;
+    background-color: blue;
+    width:40px;
+    height:40px;
+    display:flex;
+    font-weight: 400;
+    border-bottom-left-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    
+}
+
+/*registration*/
+.register h2{
+    font-size:2em;
+    color:black;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.register .input-box{
+    position:relative;
+    width:100%;
+    height:45px;
+    border-bottom:2px solid black;
+    margin: 20px 0;
+}
+
+.loginbox .register{
+    width:100%;
+    padding:40px;
+}
+
+.loginbox .register{
+    position:absolute;
+    transform:translateX(400px);
+    transition:transform .4s ease;
+}
+
+
+/*transisions*/
+
+.loginbox.active .formlogin{
+    transform: translateX(-400px);
+}
+.loginbox.active .register{
+    transform:translateX(0);
+}
+
+.loginbox.active{
+    height:520px;
+}
+
+

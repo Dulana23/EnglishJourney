@@ -1,0 +1,106 @@
+:root {
+  --primary-blue: #007bff;
+  --success-green: #28a745;
+  --error-red: #dc3545;
+}
+
+body {
+  background-image: url(Img/background1.jpg);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px 0;
+}
+
+.quiz-container {
+  max-width: 900px;
+  margin: auto;
+  background: rgb(160, 223, 252);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.sticky-top-custom {
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364, #4facfe);
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+
+.progress {
+  height: 25px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.question-card {
+  background: #fff;
+  border: 2px solid #f1f1f1;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.quiz-slot {
+  display: inline-block;
+  min-width: 100px;
+  border-bottom: 3px solid var(--primary-blue);
+  text-align: center;
+  color: var(--primary-blue);
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.options-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-option {
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.btn-option:hover {
+  background-color: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+/* Status States */
+.card-correct {
+  border-color: var(--success-green) !important;
+  background-color: #f1fdf4 !important;
+}
+
+.card-wrong {
+  border-color: var(--error-red) !important;
+  background-color: #fff5f5 !important;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.correct-text {
+  color: var(--success-green);
+  border-bottom: 3px solid var(--success-green);
+}
