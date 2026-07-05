@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | D.N.Production | Portfolio</title>
+  <link rel="icon" href="img/logo.jpg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --red:       #D92B2B;
+      --red-dark:  #A51E1E;
+      --red-light: #FDEAEA;
+      --red-mid:   #F5BEBE;
+      --white:     #FFFFFF;
+      --off-white: #FDF7F7;
+      --text:      #1A1A1A;
+      --text-muted:#666;
+      --border:    rgba(217,43,43,0.15);
+      --radius:    14px;
+      --shadow:    0 4px 24px rgba(217,43,43,0.10);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #ffacac, #ff6161, #ff2400, #fe3232, #f98d8d);
+    }
+    .div1 {
+            background: linear-gradient(to right, #940606, #d00909, #ff2400, #fe3232, #f98d8d);
+            display: flex;
+            align-items: center;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        #header {
+            animation: slideDown 2s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to   { transform: translateY(0);       opacity: 1; }
+        }
+
+        @keyframes slideright {
+            from { transform: translateX(100%); opacity: 0; }
+            to   { transform: translateX(0);    opacity: 1; }
+        }
+
+        #title {
+            animation: slideright 2s ease-out;
+        }
+
+        .title {
+            color: aliceblue;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+
+        /* NAV */
+        .nav1 {
+            margin-left: auto;
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .navbar-toggler {
+            border: 2px solid rgba(255,255,255,0.6);
+            background: transparent;
+            padding: 6px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .navbar-toggler-icon {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: white;
+            position: relative;
+        }
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: white;
+            position: absolute;
+        }
+        .navbar-toggler-icon::before { top: -7px; }
+        .navbar-toggler-icon::after  { top:  7px; }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+            display: block;
+        }
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Mobile nav collapse */
+        .navbar-collapse {
+            display: flex;
+        }
+        .navbar-collapse.collapsed {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .div1 {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 16px;
+            }
+            .title { font-size: 1.3rem; }
+            .nav1 { width: 100%; margin-left: 0; }
+            .navbar-toggler { display: block; margin-left: auto; }
+            .navbar-collapse {
+                display: none;
+                width: 100%;
+            }
+            .navbar-collapse.open {
+                display: flex;
+            }
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+                background: rgba(0,0,0,0.25);
+                border-radius: 4px;
+                margin-top: 8px;
+                padding: 8px 0;
+            }
+            .nav-link { padding: 10px 20px; }
+        }
+
+        @media (min-width: 769px) {
+            .navbar-toggler { display: none; }
+            .navbar-collapse.collapsed { display: flex !important; }
+        }
+
+    
+    /* ── SECTION ── */
+    .portfolio {
+      padding: 4rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .profile-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: -20px;    
+        }
+
+        .profile-logo img {
+            width: 100%;
+            max-width: 200px; 
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-light);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -1px;
+      line-height: 1.15;
+    }
+
+    .section-header h2 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .header-line {
+      width: 56px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--red);
+      margin: 16px auto 0;
+    }
+
+    /* ── FILTERS ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      padding: 8px 22px;
+      border-radius: 30px;
+      border: 1.5px solid var(--red-mid);
+      background: var(--white);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .filter-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    /* ── GRID ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .card.hidden { display: none; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 180px;
+      background: var(--red-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative corner accent */
+    .card-thumb::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(217,43,43,0.08);
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-icon {
+      font-size: 52px;
+      color: var(--red);
+      opacity: 0.5;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    .card-body {
+      padding: 18px 20px 10px;
+    }
+
+    .card-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .card-body p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card-footer {
+      padding: 12px 20px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--red-light);
+      margin-top: 8px;
+    }
+
+    .card-tech {
+      font-size: 11px;
+      color: var(--red);
+      background: var(--red-light);
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .view-btn:hover { background: var(--red-dark); }
+
+   /* ==================== FOOTER ==================== */
+   .footer-main {
+            background: #000;
+            color: #fff;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-grid h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #f9a825;
+            margin-bottom: 1rem;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            font-size: 0.85rem;
+            color: #aaa;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+
+        .footer-grid a:hover { color: #fff; }
+
+        .social-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .social-btn {
+            width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: #aaa;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .social-btn:hover {
+            color: #fff;
+            border-color: #EF233C;
+            background: rgba(239,35,60,0.15);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .footer-contact-item i {
+            color: #EF233C;
+            font-size: 1rem;
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #222;
+            padding-top: 1.25rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1.5px solid var(--red-mid);
+        padding: 1rem 2rem 1.5rem;
+        gap: 1rem;
+        z-index: 99;
+      }
+      .hamburger { display: block; }
+    }
+
+    @media (max-width: 560px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio { padding: 2.5rem 1.2rem 4rem; }
+      .topbar { padding: 0 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="col-12 div1" id="header">
+        <div>
+            <h2 class="title" id="title">D.N. Production</h2>
+        </div>
+    
+        <div class="nav1">
+            <nav class="navbar">
+                <button class="navbar-toggler" id="navToggler" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home.html">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home.html">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+  <!-- ── PORTFOLIO SECTION ── -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-header">
+        <div class="profile-logo mb-4">
+            <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none'">
+        </div>
+      <div class="section-eyebrow">
+        <i class="bi bi-grid-3x3-gap-fill"></i> My Work
+      </div>
+      <h2>My <em>Excellent</em> Projects</h2>
+      <div class="header-line"></div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web Design</button>
+      <button class="filter-btn" data-filter="desktop">Desktop Apps</button>
+      <button class="filter-btn" data-filter="game">Game Dev</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- Card 1 -->
+      <div class="card" data-cat="web">
+        <div class="card-thumb">
+           <img src="img/D.N-Shop.png" alt="D.N Shop">
+          
+          <span class="card-badge">Web Design</span>
+        </div>
+        <div class="card-body">
+          <h3>D.N.Shop</h3>
+          <p>eCommerce Website</p>
+          
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">PHP / MySQL</span>
+          
+            <a href="img/D.N-Shop.png" class="view-btn"><i class="bi bi-eye"></i> View</a>
+            <a href="https://github.com/Dulana23/D.N.-Shop" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+       
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" data-cat="desktop">
+        <div class="card-thumb">
+           <img src="img/Dulana Beach Resort .png" alt="Dulana Beach Resort"> 
+          
+          <span class="card-badge">Desktop App</span>
+        </div>
+        <div class="card-body">
+          <h3>Dulana Beach Resort</h3>
+          <p>Java Swing Desktop Application</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">Java Swing</span>
+          <a href="https://youtu.be/1yrhDwceGUU?si=Vd8TSkED6Ayt3TN1" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="https://github.com/Dulana23/Hotel-Dula" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" data-cat="game">
+        <div class="card-thumb">
+           <img src="img/2DGame.png" alt="2D Game"> 
+          
+          <span class="card-badge">Game Dev</span>
+        </div>
+        <div class="card-body">
+          <h3>The Red Hat Boy</h3>
+          <p>JavaScript 2D Game</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">JavaScript</span>
+          <a href="https://youtu.be/AxJPa3eyjWQ?si=jz0y-J7KP-ai0Lip" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="https://www.linkedin.com/posts/dulananavodya_html-css-javascript-ugcPost-7300557252158013442-ByEk/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFcXH2UBlqoV7j1YpvqtepDiQ11NLOPtq2g" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card" data-cat="web">
+        <div class="card-thumb">
+           <img src="img/MySQL.png" alt="MySQL"> 
+          
+          <span class="card-badge">Database</span>
+        </div>
+        <div class="card-body">
+          <h3>MySQL</h3>
+          <p>Database Management System</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">MySQL</span>
+          <a href="img/MySQL.png" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card" data-cat="web">
+        <div class="card-thumb">
+           <img src="img/eShop.png" alt="eShop">
+         
+          <span class="card-badge">Web Design</span>
+        </div>
+        <div class="card-body">
+          <h3>EnglishJounery</h3>
+          <p>Learning Web site</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">PHP / HTML / CSS / JS</span>
+          <a href="img/EnglishJourney.png" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="https://github.com/Dulana23/EnglishJourney" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card" data-cat="desktop">
+        <div class="card-thumb">
+           <img src="img/python-calculator.png" alt="Python Calculator"> 
+        
+          <span class="card-badge">Desktop App</span>
+        </div>
+        <div class="card-body">
+          <h3>My Calculator</h3>
+          <p>Python Application</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">Python</span>
+          <a href="img/python-calculator.png" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+          </a>
+        </div>
+      </div>
+
+      
+      <!-- Card 2 -->
+      <div class="card" data-cat="desktop">
+        <div class="card-thumb">
+           <img src="img/Dulana Beach Resort .png" alt="Dulana Beach Resort"> 
+          
+          <span class="card-badge">Console App</span>
+        </div>
+        <div class="card-body">
+          <h3>SUSL - SportStock</h3>
+          <p>Sport Item Management System</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-tech">C</span>
+          <a href="" class="view-btn"><i class="bi bi-eye"></i> View</a>
+          <a href="" class="view-btn"><i class="bi bi-eye"></i> Go</a>
+        </div>
+      </div>
+
+
+    </div><!-- /grid -->
+  </section>
+
+  <footer class="footer-main" id="footer">
+    <div class="footer-grid">
+        <div>
+            <h5>D.N. Production</h5>
+            <p>Here we are at D.N. Production&trade; to support you in improving your IT knowledge.</p>
+            <div class="social-row">
+                <a href="https://web.facebook.com/dulana.obapitiya" class="social-btn" target="_blank" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="social-btn" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/dulananavodya/" class="social-btn" target="_blank" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://www.youtube.com/@dulananavodya" class="social-btn" target="_blank" aria-label="YouTube">
+                    <i class="bi bi-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h5>Quick Links</h5>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+                <a href="home.html">Home</a>
+                <a href="home.html">Education</a>
+                <a href="home.html">Experience</a>
+                <a href="project.html">Projects</a>
+                <a href="#footer">About</a>
+            </div>
+            <br>
+            <p style="color:#555;font-size:0.78rem;">Copyright &copy; 2026 D.N. Production<br>All Rights Reserved.</p>
+        </div>
+
+        <div>
+            <h5>Contact</h5>
+            <div class="footer-contact-item">
+                <i class="bi bi-house-fill"></i>
+                <span>2A, Wewalwala Road, Bataganwila, Galle, Sri Lanka</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="bi bi-at"></i>
+                <span>dulanaobapitiya@gmail.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+94 762 046 551</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="bi bi-printer-fill"></i>
+                <span>+94 119 356 356</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy; 2026 D.N. Production &trade; — All Rights Reserved</p>
+    </div>
+</footer>
+
+  <script>
+    // Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(card => {
+          const match = f === 'all' || card.dataset.cat === f;
+          card.classList.toggle('hidden', !match);
+        });
+      });
+    });
+
+    const toggler = document.getElementById('navToggler');
+    const navCollapse = document.getElementById('navbarNav');
+    toggler.addEventListener('click', () => {
+        navCollapse.classList.toggle('open');
+    });
+    navCollapse.querySelectorAll('.nav-link').forEach(a => {
+        a.addEventListener('click', () => navCollapse.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
